@@ -8,8 +8,7 @@
   <title>Nicolas Gonzalez Website</title>
   <link rel="icon" href="https://raw.githubusercontent.com/ngonsoto/ngonsoto.github.io/main/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
   <style>
     body {
@@ -187,7 +186,6 @@
   .carousel {
     position: relative;
     width: 100%;
-    height: 500px;
     overflow: hidden;
   }
 
@@ -395,7 +393,7 @@
 
 
   <div class="flex flex-col min-h-screen">
-    <div class="container mx-auto px-4">
+    <div class="container max-w-4xl mx-auto px-4">
       <div class="flex justify-center pt-12">
         <h1 class="text-4xl text-white font-bold">Nicolas Gonzalez</h1>
       </div>
@@ -416,13 +414,13 @@
 
       <div class="flex justify-center">
         <button
-          class="bg-green-500 hover:bg-green-700 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
+          class="bg-emerald-600 hover:bg-emerald-900 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
           id="button1">Skills</button>
         <button
-          class="bg-green-500 hover:bg-green-700 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
+          class="bg-emerald-600 hover:bg-emerald-900 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
           id="button2">Work experience</button>
         <button
-          class="bg-green-500 hover:bg-green-700 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
+          class="bg-emerald-600 hover:bg-emerald-900 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
           id="button3">Certifications</button>
       </div>
       <div class="flex justify-center">
@@ -463,60 +461,63 @@
             LaTeX, Markdown.<br><br>
           </p>
         </div>
-        <div class="carousel hidden" id="text2">
+        <div class="carousel hidden md:h-96 sm:h-[600px] h-[800px]" id="text2">
           <div class="carousel__slide carousel__slide--active">
-            <div class="carousel__text">
-              <p class="text-2xl font-black leading-3">
+            <div class="carousel__text -space-y-8">
+              <p class="text-2xl font-black leading-normal truncate">
                 PriceWaterhouseCoopers
               </p>
-              <p class="text-xl font-black leading-3">
+              <p class="text-xl font-black leading-normal">
                 Latin American Network IT Cloud Coordinator
               </p>
-              <p class="text-base font-black leading-3">
+              <p class="text-base font-black leading-normal">
                 June 2022 - Present
               </p>
-              <p class="text-gray-300 text-sm">
-                • Migration of on-prem servers towards Azure cloud services.
-                • Windows servers management and administration.
-                • Consultancy services with the different teams of the LatAm region.
-                • Coordination of maintenance work of the infrastructure with the US and India teams.
-                • Reports and graphics generation to be presented to business leaders.
-              </p>
+              <ul class="list-disc list-inside text-gray-300 text-sm -space-y-5">
+                <li>Migration of on-prem servers towards Azure cloud services.</li>
+                <li>Windows servers management and administration.</li>
+                <li>Consultancy services with the different teams of the LatAm region.</li>
+                <li>Coordination of maintenance work of the infrastructure with the US and India teams.</li>
+                <li>Reports and graphics generation to be presented to business leaders.</li>
+              </ul>
             </div>
           </div>
           <div class="carousel__slide carousel__slide">
-            <div class="carousel__text">
-              <p class="text-2xl font-black leading-3">
+            <div class="carousel__text -space-y-8">
+              <p class="text-2xl font-black leading-normal">
                 Universidad Católica de Asunción
               </p>
-              <p class="text-xl font-black leading-3">
+              <p class="text-xl font-black leading-normal">
                 Systems Administrator
               </p>
-              <p class="text-base font-black leading-3">
+              <p class="text-base font-black leading-normal">
                 February 2017 - June 2022
               </p>
               <p class="text-gray-300 text-sm">
-                • Manteinance and technical support at computer labs.
-                • Monitoring, control and analysis of the data network.
-                • Technical advice in the hardware and software area to different departments on the university campus.
-                • Usage and control of monitoring tools (Grafana, Prometheus, Nagios, Cacti).
-                • Administration and configuration of Web, DNS, Databases (PostgreSQL, MySQL) and closed circuit servers.
-                • Configuration, segmentation and administration of networks with Cisco, Mikrotik, HPE and HP Aruba branded routers, switches and access points.
-                • Segmentation of networks with VLANs, virtual interfaces and bridge interfaces.
-                • Implementation and administacion of Google Workspace/G Suite and Office 365 platforms.
-                • Automation of server provision/deployment with Ansible.
+                <ul class="list-disc list-inside text-gray-300 text-sm -space-y-5">
+                  <li>Manteinance and technical support at computer labs.</li>
+                  <li>Monitoring, control and analysis of the data network.</li>
+                  <li>Technical advice in the hardware and software area to different departments on the university campus.</li>
+                  <li>Monitoring, control and analysis of the data network.</li>
+                  <li>Usage and control of monitoring tools (Grafana, Prometheus, Nagios, Cacti).</li>
+                  <li>Administration and configuration of Web, DNS, Databases (PostgreSQL, MySQL) and closed circuit servers.</li>
+                  <li>Configuration, segmentation and administration of networks with Cisco, Mikrotik, HPE and HP Aruba branded routers, switches and access points.</li>
+                  <li>Segmentation of networks with VLANs, virtual interfaces and bridge interfaces.</li>
+                  <li>Implementation and administacion of Google Workspace/G Suite and Office 365 platforms.</li>
+                  <li>Automation of server provision/deployment with Ansible.</li>
+                </ul>
               </p>
             </div>
           </div>
           <div class="carousel__slide">
-            <div class="carousel__text">
-              <p class="text-2xl font-black leading-3">
+            <div class="carousel__text -space-y-8">
+              <p class="text-2xl font-black leading-normal">
                 Universidad Católica de Asunción
               </p>
-              <p class="text-xl font-black leading-3">
+              <p class="text-xl font-black leading-normal">
                 Junior Researcher
               </p>
-              <p class="text-base font-black leading-3">
+              <p class="text-base font-black leading-normal">
                 August 2018 - December 2019
               </p>
               <p class="text-gray-300 text-sm">
@@ -528,14 +529,14 @@
             </div>
           </div>
           <div class="carousel__slide">
-            <div class="carousel__text">
-              <p class="text-2xl font-black leading-3">
+            <div class="carousel__text -space-y-8">
+              <p class="text-2xl font-black leading-normal">
                 SODEP S.A.
               </p>
-              <p class="text-xl font-black leading-3">
+              <p class="text-xl font-black leading-normal">
                 Android Developer
               </p>
-              <p class="text-base font-black leading-3">
+              <p class="text-base font-black leading-normal">
                 March 2018 - Jun 2018
               </p>
               <p class="text-gray-300 text-sm">
@@ -555,17 +556,16 @@
         <header>
           <div class="container mx-auto px-4 py-12">
             <div class="flex justify-center items-center">
-              <img class="rounded-full w-32 h-32 shadow"
+              <a href="https://www.credential.net/b6452941-bc09-4a8e-8686-13c8a85390af"><img class="rounded-full w-32 h-32 shadow"
                 src="https://miro.medium.com/v2/resize:fit:324/0*srOk0PnzDBh3GAGb.png" alt="GCP ACE Badge">
               <div class="ml-8">
-                <a class="text-2xl font-black" href="https://www.credential.net/b6452941-bc09-4a8e-8686-13c8a85390af">
+                <p class="text-2xl font-black text-emerald-500 hover:text-emerald-700 transition duration-200">
                   GCP Associate Cloud Engineer
                   </p>
+                </a>
                   <p class="text-xl font-black">
                     Google Cloud Platform
                   </p>
-
-                </a>
                 <p class="text-base font-black">
                   Issued on May 2022 - Expires May 2024
                 </p>
@@ -577,17 +577,16 @@
           </div>
           <div class="container mx-auto px-4 py-12">
             <div class="flex justify-center items-center">
-              <img class="rounded-full w-32 h-32 shadow"
+              <a href="https://learn.microsoft.com/en-us/users/nicolasgonzlezsoto-9417/credentials/e6dcc4049149f953"><img class="rounded-full w-32 h-32 shadow"
                 src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Azure AZ-104 Badge">
               <div class="ml-8">
-                <a class="text-2xl font-black" href="https://learn.microsoft.com/en-us/users/nicolasgonzlezsoto-9417/credentials/e6dcc4049149f953">
+                <p class="text-2xl font-black text-emerald-500 hover:text-emerald-700 transition duration-200">
                   Azure Administrator Associate
                   </p>
+                </a>
                   <p class="text-xl font-black">
                     Microsoft Azure
                   </p>
-
-                </a>
                 <p class="text-base font-black">
                   Issued on Jul 2023 - Expires Jul 2024
                 </p>
@@ -599,17 +598,16 @@
           </div>
           <div class="container mx-auto px-4 py-12">
             <div class="flex justify-center items-center">
-              <img class="rounded-full w-32 h-32 shadow"
+              <a href="https://learn.microsoft.com/en-us/users/nicolasgonzlezsoto-9417/credentials/69e206e9fbca0133"><img class="rounded-full w-32 h-32 shadow"
                 src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" alt="Azure AZ-400 Badge">
               <div class="ml-8">
-                <a class="text-2xl font-black" href="https://learn.microsoft.com/en-us/users/nicolasgonzlezsoto-9417/credentials/69e206e9fbca0133">
+                <p class="text-2xl font-black text-emerald-500 hover:text-emerald-700 transition duration-200" href="https://learn.microsoft.com/en-us/users/nicolasgonzlezsoto-9417/credentials/69e206e9fbca0133">
                   Azure DevOps Engineer Expert
                   </p>
+                </a>
                   <p class="text-xl font-black">
                     Microsoft Azure
                   </p>
-
-                </a>
                 <p class="text-base font-black">
                   Issued on Jul 2023 - Expires Jul 2024
                 </p>
@@ -621,17 +619,16 @@
           </div>
           <div class="container mx-auto px-4 py-12">
             <div class="flex justify-center items-center">
-              <img class="rounded-full w-32 h-32 shadow"
+              <a href="https://www.credly.com/badges/566f362a-8b70-406d-b6b8-cb507e242864/linked_in_profile"><img class="rounded-full w-32 h-32 shadow"
                 src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Solutions-Architect-Associate_badge.3419559c682629072f1eb968d59dea0741772c0f.png" alt="AWS Solutions Architect Badge">
               <div class="ml-8">
-                <a class="text-2xl font-black" href="https://www.credly.com/badges/566f362a-8b70-406d-b6b8-cb507e242864/linked_in_profile">
+                <p class="text-2xl font-black text-emerald-500 hover:text-emerald-700 transition duration-200">
                   AWS Certified Solutions Architect
                   </p>
+                </a>
                   <p class="text-xl font-black">
                     Amazon Web Services
                   </p>
-
-                </a>
                 <p class="text-base font-black">
                   Issued on May 2023 - Expires May 2026
                 </p>
@@ -710,36 +707,36 @@
       text1.classList.toggle('hidden');
       text2.classList.add('hidden');
       text3.classList.add('hidden');
-      button1.classList.toggle('bg-green-500');
-      button1.classList.toggle('bg-green-700');
-      button2.classList.remove('bg-green-700', 'text-white');
-      button2.classList.add('bg-green-500', 'text-white');
-      button3.classList.remove('bg-green-700', 'text-white');
-      button3.classList.add('bg-green-500', 'text-white');
+      button1.classList.toggle('bg-emerald-600');
+      button1.classList.toggle('bg-emerald-800');
+      button2.classList.remove('bg-emerald-800', 'text-white');
+      button2.classList.add('bg-emerald-600', 'text-white');
+      button3.classList.remove('bg-emerald-800', 'text-white');
+      button3.classList.add('bg-emerald-600', 'text-white');
     });
 
     button2.addEventListener('click', () => {
       text2.classList.toggle('hidden');
       text1.classList.add('hidden');
       text3.classList.add('hidden');
-      button2.classList.toggle('bg-green-500');
-      button2.classList.toggle('bg-green-700');
-      button1.classList.remove('bg-green-700', 'text-white');
-      button1.classList.add('bg-green-500', 'text-white');
-      button3.classList.remove('bg-green-700', 'text-white');
-      button3.classList.add('bg-green-500', 'text-white');
+      button2.classList.toggle('bg-emerald-600');
+      button2.classList.toggle('bg-emerald-800');
+      button1.classList.remove('bg-emerald-800', 'text-white');
+      button1.classList.add('bg-emerald-600', 'text-white');
+      button3.classList.remove('bg-emerald-800', 'text-white');
+      button3.classList.add('bg-emerald-600', 'text-white');
     });
 
     button3.addEventListener('click', () => {
       text3.classList.toggle('hidden');
       text1.classList.add('hidden');
       text2.classList.add('hidden');
-      button3.classList.toggle('bg-green-500');
-      button3.classList.toggle('bg-green-700');
-      button1.classList.remove('bg-green-700', 'text-white');
-      button1.classList.add('bg-green-500', 'text-white');
-      button2.classList.remove('bg-green-700', 'text-white');
-      button2.classList.add('bg-green-500', 'text-white');
+      button3.classList.toggle('bg-emerald-600');
+      button3.classList.toggle('bg-emerald-800');
+      button1.classList.remove('bg-emerald-800', 'text-white');
+      button1.classList.add('bg-emerald-600', 'text-white');
+      button2.classList.remove('bg-emerald-800', 'text-white');
+      button2.classList.add('bg-emerald-600', 'text-white');
     });
 
     // Toggle visibility of info bubble when button is clicked
