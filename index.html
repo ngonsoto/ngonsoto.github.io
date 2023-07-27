@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NGonzalez Website</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <style>
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #212121;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    a {
+      color: #64ffda;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #64ffda;
+      color: #212121;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #4dd0e1;
+    }
+
+    .text-secondary {
+      color: #aaa;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .skills li {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+    }
+
+    .project {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #333;
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+
+    .project a {
+      color: #64ffda;
+    }
+
+    #about-content {
+      animation-duration: 1s;
+      animation-name: slide-down;
+    }
+
+    @keyframes slide-down {
+      from {
+        transform: translateY(-100%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<style>
+  body {
+    background-color: #1a202c;
+  }
+
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: twinkle 1s infinite;
+  }
+
+  @keyframes twinkle {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes bouncex {
+
+    0%,
+    100% {
+      transform: translateX(-15%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+      transform: translateX(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  .animate-bouncex {
+    animation: bouncex 1s infinite;
+  }
+
+  @keyframes bouncexx {
+
+    0%,
+    100% {
+      transform: translateX(15%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+      transform: translateX(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  .animate-bouncexx {
+    animation: bouncexx 1s infinite;
+  }
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .carousel__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .carousel__slide--active {
+    opacity: 1;
+  }
+
+  .carousel__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #0E9F6E;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .carousel__arrow:hover {
+    background-color: #046C4E;
+    color: #fff;
+    transform: scale(1.1);
+    /* Add hover effect */
+  }
+
+  .carousel__arrow--left {
+    left: 10px;
+  }
+
+  .carousel__arrow--right {
+    right: 10px;
+  }
+
+  .carousel__text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    color: #fff;
+    white-space: pre-line;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .social__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    background-color: #0E9F6E;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    /* Add transition effect */
+  }
+
+  .social__icon:hover {
+    background-color: #046C4E;
+    color: #fff;
+    transform: scale(1.1);
+    /* Add hover effect */
+  }
+
+  .text-muted {
+    color: #6c757d;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .show {
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+  }
+
+  .hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+  }
+
+  /* Button for displaying info */
+  .info-button {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    width: 3rem;
+    height: 3rem;
+    background-color: #2d3748;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    /* Add transition effect */
+  }
+
+  .info-button:hover {
+    background-color: #242b37;
+    transform: scale(1.1);
+    /* Add hover effect */
+  }
+
+  /* Text bubble for displaying info */
+  .info-bubble {
+    position: fixed;
+    top: 5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    max-width: 20rem;
+    padding: 1rem;
+    background-color: #2d3748;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .info-bubble p {
+    margin: 0;
+  }
+
+  /* Show text bubble when button is clicked */
+  .info-button.active~.info-bubble {
+    opacity: 1;
+  }
+
+  /* Hide text bubble by default */
+  .hidden {
+    display: none;
+  }
+</style>
+
+<div class="stars"></div>
+
+<script>
+  const stars = document.querySelector('.stars');
+
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = Math.random() * 100 + '%';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 5 + 's';
+    stars.appendChild(star);
+  }
+</script>
+
+<body>
+
+  <!-- Button for displaying info -->
+  <div class="info-button">
+    <i class="mdi mdi-information text-2xl"></i>
+  </div>
+
+  <!-- Text bubble for displaying info -->
+  <div class="info-bubble hidden">
+    <p>Hey there! This website was developed using ChatGPT.</p>
+    <br>
+    <p>This is what the AI has to say about it:</p>
+    <p class="text-gray-300 font-mono">"Hello there! I'm ChatGPT, a language model trained by OpenAI. It's been my
+      pleasure assisting in the development of this website. Thank you for visiting! </p>
+    <br>
+    <p class="text-gray-300 font-mono">This website was developed using Tailwind CSS and the following JavaScript
+      libraries: Swiper for the image carousel, Material Design Icons for the social media icons, and Typed.js for the
+      typing animation in the hero section."</p>
+    <br>
+    <p>Anyways since this is a static website, it is using Github Pages free offering to be served.</p>
+  </div>
+
+
+  <div class="flex flex-col min-h-screen">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center pt-12">
+        <h1 class="text-4xl text-white font-bold">Nicolas Gonzalez</h1>
+      </div>
+
+      <div class="flex justify-center mt-4">
+        <h2 class="text-xl text-gray-400">Cloud Engineer</h2>
+      </div>
+
+      <div class="flex justify-center mt-8">
+        <img class="rounded-full w-32 h-32"
+          src="https://media.licdn.com/dms/image/D4D03AQHk-_SD6oEMKg/profile-displayphoto-shrink_800_800/0/1690333459479?e=1695859200&v=beta&t=lEHs9LipJnX2rTgzthBL-CsUP-DUC3CsOV3tjPFUGgY"
+          alt="Profile Picture">
+      </div>
+
+      <p class="text-gray-300 text-lg mt-4">Hi. I'm a Computer Engineer aspiring to become a DevOps Engineer. This website serves to put in practice some of my knowledge, skills and experience in the ever-evolving world of technology. Feel free to contact me on my links at the bottom of this page.</p>
+
+      <br><br><br>
+
+      <div class="flex justify-center">
+        <button
+          class="bg-green-500 hover:bg-green-700 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
+          id="button1">Skills</button>
+        <button
+          class="bg-green-500 hover:bg-green-700 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
+          id="button2">Work experience</button>
+        <button
+          class="bg-green-500 hover:bg-green-700 text-white font-bold rounded-lg py-2 px-4 mx-2 transition duration-200"
+          id="button3">Certifications</button>
+      </div>
+      <div class="flex justify-center">
+
+        <div class="text-white hidden transition-all duration-500 ease-in-out p-4 rounded-md mt-4" id="text1">
+          <p class="text-white text-sm">
+            <p class="text-white font-black">
+              👨‍💻 Programming 
+            </p>
+            C, Shell Script, Python, Ruby, Ruby-on-Rails, PHP.<br><br>
+            <p class="text-white font-black">
+              📊 Databases
+            </p>
+            MySQL, MariaDB, PostgreSQL.<br><br>
+            <p class="text-white font-black">
+              🔍 Monitoring
+            </p>
+            Grafana, Prometheus, Loki.<br><br>
+            <p class="text-white font-black">
+              🤖 Automation 
+            </p>
+            Ansible, Gitlab CI/CD, Azure DevOps.<br><br>
+            <p class="text-white font-black">
+              ☁️ Cloud 
+            </p>
+            Azure, AWS, GCP, Google Workspace, Microsoft 365, Terraform.<br><br>
+            <p class="text-white font-black">
+              🔌 Virtualization 
+            </p>
+            XenServer, Docker, Kubernetes.<br><br>
+            <p class="text-white font-black">
+              👔 Management 
+            </p>
+            Jira, OSTicket, Planner.<br><br>
+            <p class="text-white font-black">
+              📚 Documentation 
+            </p>
+            LaTeX, Markdown.<br><br>
+          </p>
+        </div>
+        <div class="carousel hidden" id="text2">
+          <div class="carousel__slide carousel__slide--active">
+            <div class="carousel__text">
+              <p class="text-2xl font-black leading-3">
+                PriceWaterhouseCoopers
+              </p>
+              <p class="text-xl font-black leading-3">
+                Latin American Network IT Cloud Coordinator
+              </p>
+              <p class="text-base font-black leading-3">
+                June 2022 - Present
+              </p>
+              <p class="text-gray-300 text-sm">
+                • Migration of on-prem servers towards Azure cloud services.
+                • Windows servers management and administration.
+                • Consultancy services with the different teams of the LatAm region.
+                • Coordination of maintenance work of the infrastructure with the US and India teams.
+                • Reports and graphics generation to be presented to business leaders.
+              </p>
+            </div>
+          </div>
+          <div class="carousel__slide carousel__slide">
+            <div class="carousel__text">
+              <p class="text-2xl font-black leading-3">
+                Universidad Católica de Asunción
+              </p>
+              <p class="text-xl font-black leading-3">
+                Systems Administrator
+              </p>
+              <p class="text-base font-black leading-3">
+                February 2017 - June 2022
+              </p>
+              <p class="text-gray-300 text-sm">
+                • Manteinance and technical support at computer labs.
+                • Monitoring, control and analysis of the data network.
+                • Technical advice in the hardware and software area to different departments on the university campus.
+                • Usage and control of monitoring tools (Grafana, Prometheus, Nagios, Cacti).
+                • Administration and configuration of Web, DNS, Databases (PostgreSQL, MySQL) and closed circuit servers.
+                • Configuration, segmentation and administration of networks with Cisco, Mikrotik, HPE and HP Aruba branded routers, switches and access points.
+                • Segmentation of networks with VLANs, virtual interfaces and bridge interfaces.
+                • Implementation and administacion of Google Workspace/G Suite and Office 365 platforms.
+                • Automation of server provision/deployment with Ansible.
+              </p>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <div class="carousel__text">
+              <p class="text-2xl font-black leading-3">
+                Universidad Católica de Asunción
+              </p>
+              <p class="text-xl font-black leading-3">
+                Junior Researcher
+              </p>
+              <p class="text-base font-black leading-3">
+                August 2018 - December 2019
+              </p>
+              <p class="text-gray-300 text-sm">
+                Research project by Universidad Católica de Asunción in conjunction with University of Trento, Italy.
+                Funded by CONACYT Paraguay.
+                • Participating in the Systematic Mapping of Studies for the project. Oriented on privacy in information systems.
+                • Developing my Engineering Degree's thesis.
+              </p>
+            </div>
+          </div>
+          <div class="carousel__slide">
+            <div class="carousel__text">
+              <p class="text-2xl font-black leading-3">
+                SODEP S.A.
+              </p>
+              <p class="text-xl font-black leading-3">
+                Android Developer
+              </p>
+              <p class="text-base font-black leading-3">
+                March 2018 - Jun 2018
+              </p>
+              <p class="text-gray-300 text-sm">
+                Continuation of the development of Mbo'ehao app using Joko Framework.
+                • Adding login functionalities with JSON Web Token.
+                • Asynchronous communication with Room database and RxJava.
+                • Code QA.
+              </p>
+            </div>
+          </div>
+          <div class="carousel__arrow carousel__arrow--left animate-bouncex w-6 h-6">&lt;</div>
+          <div class="carousel__arrow carousel__arrow--right animate-bouncexx w-6 h-6">&gt;</div>
+        </div>
+
+      </div>
+      <div class="hidden text-white p-4 rounded-md mt-4" id="text3">
+        <header>
+          <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-center items-center">
+              <img class="rounded-full w-32 h-32 shadow"
+                src="https://miro.medium.com/v2/resize:fit:324/0*srOk0PnzDBh3GAGb.png" alt="GCP ACE Badge">
+              <div class="ml-8">
+                <a class="text-2xl font-black" href="https://www.credential.net/b6452941-bc09-4a8e-8686-13c8a85390af">
+                  GCP Associate Cloud Engineer
+                  </p>
+                  <p class="text-xl font-black">
+                    Google Cloud Platform
+                  </p>
+
+                </a>
+                <p class="text-base font-black">
+                  Issued on May 2022 - Expires May 2024
+                </p>
+                <p class="text-gray-300 text-sm">
+                  Credential ID 52001367
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-center items-center">
+              <img class="rounded-full w-32 h-32 shadow"
+                src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Azure AZ-104 Badge">
+              <div class="ml-8">
+                <a class="text-2xl font-black" href="https://learn.microsoft.com/en-us/users/nicolasgonzlezsoto-9417/credentials/e6dcc4049149f953">
+                  Azure Administrator Associate
+                  </p>
+                  <p class="text-xl font-black">
+                    Microsoft Azure
+                  </p>
+
+                </a>
+                <p class="text-base font-black">
+                  Issued on Jul 2023 - Expires Jul 2024
+                </p>
+                <p class="text-gray-300 text-sm">
+                  Credential ID E6DCC4049149F953
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-center items-center">
+              <img class="rounded-full w-32 h-32 shadow"
+                src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" alt="Azure AZ-400 Badge">
+              <div class="ml-8">
+                <a class="text-2xl font-black" href="https://learn.microsoft.com/en-us/users/nicolasgonzlezsoto-9417/credentials/69e206e9fbca0133">
+                  Azure DevOps Engineer Expert
+                  </p>
+                  <p class="text-xl font-black">
+                    Microsoft Azure
+                  </p>
+
+                </a>
+                <p class="text-base font-black">
+                  Issued on Jul 2023 - Expires Jul 2024
+                </p>
+                <p class="text-gray-300 text-sm">
+                  Credential ID 69E206E9FBCA0133
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-center items-center">
+              <img class="rounded-full w-32 h-32 shadow"
+                src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Solutions-Architect-Associate_badge.3419559c682629072f1eb968d59dea0741772c0f.png" alt="AWS Solutions Architect Badge">
+              <div class="ml-8">
+                <a class="text-2xl font-black" href="https://www.credly.com/badges/566f362a-8b70-406d-b6b8-cb507e242864/linked_in_profile">
+                  AWS Certified Solutions Architect
+                  </p>
+                  <p class="text-xl font-black">
+                    Amazon Web Services
+                  </p>
+
+                </a>
+                <p class="text-base font-black">
+                  Issued on May 2023 - Expires May 2026
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="social">
+  <!--
+    <a href="https://www.facebook.com/">
+      <div class="social__icon">
+        <i class="mdi mdi-facebook"></i>
+      </div>
+    </a>
+    <a href="https://twitter.com/">
+      <div class="social__icon">
+        <i class="mdi mdi-twitter"></i>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/">
+      <div class="social__icon">
+        <i class="mdi mdi-instagram"></i>
+      </div>
+    </a>
+  -->
+    <a href="https://www.linkedin.com/in/nicolas-gonzalez-soto/">
+      <div class="social__icon">
+        <i class="mdi mdi-linkedin"></i>
+      </div>
+    </a>
+    <a href="https://github.com/ngonsoto">
+      <div class="social__icon">
+        <i class="mdi mdi-github"></i>
+      </div>
+    </a>
+  </div>
+
+
+  <script>
+    function toggleSkills() {
+      var skillsSection = document.getElementById("skillsSection");
+      if (skillsSection.classList.contains("hidden")) {
+        skillsSection.classList.remove("hidden");
+      } else {
+        skillsSection.classList.add("hidden");
+      }
+    }
+
+    const slides = document.querySelectorAll('.carousel__slide');
+    const prevArrow = document.querySelector('.carousel__arrow--left');
+    const nextArrow = document.querySelector('.carousel__arrow--right');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+      slides[currentSlide].classList.remove('carousel__slide--active');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('carousel__slide--active');
+    }
+
+    prevArrow.addEventListener('click', () => showSlide(currentSlide - 1));
+    nextArrow.addEventListener('click', () => showSlide(currentSlide + 1));
+
+    const button1 = document.getElementById('button1');
+    const button2 = document.getElementById('button2');
+    const button3 = document.getElementById('button3');
+    const text1 = document.getElementById('text1');
+    const text2 = document.getElementById('text2');
+    const text3 = document.getElementById('text3');
+
+    button1.addEventListener('click', () => {
+      text1.classList.toggle('hidden');
+      text2.classList.add('hidden');
+      text3.classList.add('hidden');
+      button1.classList.toggle('bg-green-500');
+      button1.classList.toggle('bg-green-700');
+      button2.classList.remove('bg-green-700', 'text-white');
+      button2.classList.add('bg-green-500', 'text-white');
+      button3.classList.remove('bg-green-700', 'text-white');
+      button3.classList.add('bg-green-500', 'text-white');
+    });
+
+    button2.addEventListener('click', () => {
+      text2.classList.toggle('hidden');
+      text1.classList.add('hidden');
+      text3.classList.add('hidden');
+      button2.classList.toggle('bg-green-500');
+      button2.classList.toggle('bg-green-700');
+      button1.classList.remove('bg-green-700', 'text-white');
+      button1.classList.add('bg-green-500', 'text-white');
+      button3.classList.remove('bg-green-700', 'text-white');
+      button3.classList.add('bg-green-500', 'text-white');
+    });
+
+    button3.addEventListener('click', () => {
+      text3.classList.toggle('hidden');
+      text1.classList.add('hidden');
+      text2.classList.add('hidden');
+      button3.classList.toggle('bg-green-500');
+      button3.classList.toggle('bg-green-700');
+      button1.classList.remove('bg-green-700', 'text-white');
+      button1.classList.add('bg-green-500', 'text-white');
+      button2.classList.remove('bg-green-700', 'text-white');
+      button2.classList.add('bg-green-500', 'text-white');
+    });
+
+    // Toggle visibility of info bubble when button is clicked
+    const infoButton = document.querySelector('.info-button');
+    const infoBubble = document.querySelector('.info-bubble');
+    infoButton.addEventListener('click', () => {
+      infoButton.classList.toggle('active');
+      infoBubble.classList.toggle('hidden');
+    });
+
+
+  </script>
+
+  <!--
+
+                    .-^-.
+                    /_/_\_\
+                    ' ' | ` `
+                  / \_Y_/ \
+                  (  ' | `  )
+                  \__|_|__/
+                  (_)(_)(_)
+                    |    |
+                  [______]
+                .--'"""""'--.
+              /            \
+              .--------------.
+              | .---------.  |
+              | |          \ |
+              | |           ||
+              | |           ||
+              | |           ||   __
+              | |___________||  ||
+              | |           ||  ||
+              | |           ||  ||     
+              | |           || /  \ 
+              | `           |||    |
+              |             || \__/  
+              |             ||      
+              |             ||      
+              |             ||      
+              '-------------''-.._.
+        <3 Generated by ChatGPT <3
+      
+  /$$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$ /$$   /$$  /$$$$$$ 
+  | $$__  $$|__  $$__/|_  $$_/ /$$__  $| $$  /$$/ /$$__  $$
+  | $$  \ $$   | $$     | $$  | $$  \__/| $$ /$$/ | $$  \ $$
+  | $$$$$$$/   | $$     | $$  |  $$$$$$ | $$$$$/  | $$$$$$$
+  | $$__  $$   | $$     | $$   \____  $$| $$  $$  | $$__  $$
+  | $$  \ $$   | $$     | $$   /$$  \ $$| $$\  $$ | $$  \ $$
+  | $$  | $$   | $$    /$$$$$$|  $$$$$$/| $$ \  $$|  $$$$$$/
+  |__/  |__/   |__/   |______/ \______/ |__/  \__/ \______/ 
+
+  (a chatgpt generated ascii art)
+
+  -->
+
+  <footer class="text-center mt-5 mb-3">
+    <p class="text-muted small">
+      &copy; 2023 Nicolas Gonzalez. This work is licensed under a <a
+        href="https://www.gnu.org/licenses/copyleft.en.html">GNU Copyleft License</a>.<br>
+      Generated with the help of <a href="https://openai.com">ChatGPT</a>.
+    </p>
+  </footer>
